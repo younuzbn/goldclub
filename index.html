@@ -183,40 +183,43 @@
 
       <section class="tour-search">
         <div class="container">
-
-          <form action="" class="tour-search-form">
-
-            <div class="input-wrapper">
-              <!-- <label for="destination" class="input-label">Search Destination*</label> -->
-
-              <input type="text" name="destination" id="destination" required placeholder=""
-                class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <!-- <label for="people" class="input-label">Pax Number*</label> -->
-
-              <input type="number" name="people" id="people" required placeholder="" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <!-- <label for="checkin" class="input-label">Checkin Date**</label> -->
-
-              <input type="" name="checkin" id="checkin" required class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <!-- <label for="checkout" class="input-label">Checkout Date*</label> -->
-
-              <input type="" name="checkout" id="checkout" required class="input-field">
-            </div>
-
-            <button type="submit" class="btn btn-secondary">Enquire now</button>
-
-          </form>
-
+    
+            <form action="" id="enquiryForm" class="tour-search-form">
+    
+                <!-- Popup Box -->
+                <div class="popup-box" id="popup">
+                    <div class="popup-content">
+                        <p>Your enquiry has been submitted successfully!</p>
+                        <button onclick="closePopup()">OK</button>
+                    </div>
+                </div>
+    
+                <!-- Name Input -->
+                <div class="input-wrapper">
+                    <input type="text" name="name" id="name" required placeholder="Enter Your Name" class="input-field">
+                </div>
+    
+                <!-- Mobile Number with Country Code (Separated by |) -->
+                <div class="input-wrapper">
+                  <input type="text" name="number" id="number" required placeholder="Enter Mobile Number" class="input-field" oninput="formatPhoneNumber(this)" maxlength="16">
+              </div>
+                <!-- Zone Input -->
+                <div class="input-wrapper">
+                    <input type="text" name="zone" id="zone" required placeholder="Enter Your Zone" class="input-field">
+                </div>
+    
+                <!-- Street and Building Input -->
+                <div class="input-wrapper">
+                    <input type="text" name="streetandbuilding" id="streetandbuilding" required placeholder="Street and Building" class="input-field">
+                </div>
+    
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-secondary">Enquire now</button>
+    
+            </form>
+    
         </div>
-      </section>
+    </section>
 
 
 
@@ -808,6 +811,8 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./mail.js"></script>
 
 </body>
 
